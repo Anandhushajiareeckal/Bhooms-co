@@ -5,6 +5,7 @@ use App\Mail\EnquiryMail;
 use Illuminate\Http\Request;
 use App\Models\contact;
 use App\Models\map;
+use App\Models\contact_details;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -40,7 +41,7 @@ class ContactController extends Controller
         $contact->subject = request("subject");
         $contact->comment = request("comment");
         $contact->save();
-        Mail::to('info@bcsopc.in')->send(new EnquiryMail($contact));
+        Mail::to('testcyenosure@gmail.com')->send(new EnquiryMail($contact));
         return redirect('/');
 
         
@@ -90,5 +91,20 @@ class ContactController extends Controller
         $admin_project = contact::find($id);
         $admin_project->delete();
         return redirect('/admin/contact');
+    }
+
+    public function content(){
+        $id = 1;
+        $contact_details = contact_details::find($id);
+        return view('admin.contact_details',['contact_details'=>$contact_details]);
+    }
+
+    public function content_update(){
+        $id = 1;
+        $contact_details = contact_details::find($id);
+        $contact_details->number = request("number");
+        $contact_details->email = request("email");
+        $contact_details->save();
+        return redirect('/admin/contact/content');
     }
 }

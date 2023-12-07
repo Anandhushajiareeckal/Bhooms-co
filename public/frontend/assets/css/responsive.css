@@ -3,6 +3,7 @@
  ----------------------------------------*/
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+	
 	.social {
 		padding-right: 0;
 		margin-left: 0px;
@@ -2868,6 +2869,7 @@
 	.services .owl-pagination{
 		padding-right:10px;
 	}
+	
 
 }
 
@@ -2982,6 +2984,9 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+	.footer_logo{
+		padding-top: 20px;
+	}
 	#wrapper.boxed, .boxed #header, .slide-content {
 		max-width: 750px;
 		width: 100%;
@@ -3320,7 +3325,21 @@
 	.progress-content-wrap .heading h5:after {
 		width: 100%;
 	}
-.slides-text{
-	min-height:310px;
-}	
+	.slides-text{
+		min-height:165px;
+	}	
+	.pad-bottom{
+		padding-bottom: 0px;
+	}
+	.footer_logo{
+		padding-top: 20px;
+	}
+	.sign-up{
+		padding-bottom: 20px;;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.footer_logo{
+		padding-top: 20px;
+	}
 }

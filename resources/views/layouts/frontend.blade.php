@@ -7,6 +7,7 @@ use App\Models\menu;
 use App\Models\mmenu;
 use App\Models\service;
 use App\Models\project;
+use App\Models\contact_details;
 
 $drops = drops::all();
 $social = social::all();
@@ -16,6 +17,7 @@ $menu = menu::all();
 $mmenu = mmenu::all();
 $service = service::all();
 $project = project::all();
+$contact_details = contact_details::find($id);
 @endphp
 <!DOCTYPE html>
 <html>
@@ -63,7 +65,7 @@ $project = project::all();
 							<div class="col-xs-12 col-sm-6">
 								<div class="mail">
 									<img src="{{asset('frontend/assets/images/icon-mail.png')}}" alt="" />
-									<span>Email us at : <a href="mailto:info@bhoomsco.com">info@bhoomsco.com</a> </span>
+									<span>Email us at : <a href="mailto:{{$contact_details->email}}">{{$contact_details->email}}</a> </span>
 								</div>
 							</div>
 							<div class="col-xs-12 col-sm-6">
@@ -98,7 +100,7 @@ $project = project::all();
 											<span class="transport">CALL US NOW FOR <span></span> YOUR TRANSPORT</span>
 										</li>
 										<li>
-											<a href="tel:5917890123">6200-329-955</a>
+											<a href="tel:{{$contact_details->number}}">{{$contact_details->number}}</a>
 										</li>
 									</ul>
 								</div>
@@ -110,15 +112,16 @@ $project = project::all();
 							<div class="col-xs-12 col-sm-9 custom-nav" >
 								<nav>
 									<div id='cssmenu'>
-										<ul class="navigation" >
+										<ul class="navigation has-sub " >
 											@for ($i = 0; $i < count($mmenu) -1 ; $i++)
 												@php $item = $mmenu[$i] @endphp
 												@if ($item->m_id == 9)
 													
 												@else
-												<li class='active' ><a href=
+												<li class='active ' ><a href=
 													
 														@if ($item->m_id == 1)
+														javascript:void(0);
 															{{ '/' }}
 														@elseif ($item->m_id == 2)
 															{{ '/about' }}
@@ -144,12 +147,22 @@ $project = project::all();
 															@endforeach
 														@endif 
 													
-													style="color: aliceblue;">{{$item->name}}</a>
-													<ul class="sub-menu">
+													style="color: aliceblue;">{{$item->name}}   
+												</a>
+												@foreach ($drops as $data)
+													@if ($data->hed_id == $item->m_id)
+														<div class="has-sub submenu-button"></div>
+													@endif
+												@endforeach
+
+												
+												
+													<ul class="sub-menu  " >
 														@foreach ($drops as $data)
 															@if ($data->hed_id == $item->m_id)
 																<li>
 																	<a href='/common/{{$data->id}}'>{{$data->name}}</a>
+																	
 																</li>
 															@endif
 														@endforeach
@@ -227,9 +240,10 @@ $project = project::all();
 								</div>
 							</div>
 							<div class="col-xs-12 col-sm-4">
-								<a href="/" class="logo"> <img src="{{$admin_icon->img_footer}}" alt="" style="height: 10em; width:150px;"/> </a><br>
-
-								<div class="sign-up">
+								<div class="footer_logo">
+									<a href="/" class="logo"> <img src="{{$admin_icon->img_footer}}" alt="" style="height: 10em; width:150px;"/> </a><br>
+								</div>
+								<div class="sign-up" >
 									<h5>newsletter signup</h5>
 									<p>
 										If you want receive our all weekly updates about new

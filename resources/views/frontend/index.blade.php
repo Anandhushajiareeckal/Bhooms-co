@@ -59,7 +59,7 @@
 									<div class="input-container ic2">
 										<textarea id="message" name="comment"  class="input" type="text" placeholder="Message " required></textarea>
 									</div>
-									<div class="input-container ic2">
+									<div class="input-container ic2 text-center">
 									    <button type="submit" class="submit" style="width:100px;" >Submit</button>
 									</div>
 								</form>

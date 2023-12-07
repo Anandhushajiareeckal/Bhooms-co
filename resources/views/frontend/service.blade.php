@@ -49,16 +49,17 @@
                 </div>
                 @endforeach 
         </div><br><br><br><br><br>
-    </div>
-    <!-- Section box ends Here -->
-    <div class="container">
         @if ($service_cont)
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12 main_content">
                      {!!$service_cont->contents!!}
             </div>
         </div>
-        @endif  
+        @endif 
+    </div>
+    <!-- Section box ends Here -->
+    <div class="container">
+         
     </div>
 </div>
 </section>

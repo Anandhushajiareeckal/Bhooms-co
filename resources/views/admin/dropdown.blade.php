@@ -61,7 +61,7 @@
                                     <button type="submit"><i class="fa fa-bookmark " ></i> </a></button>
 
                                 </td>
-                                <td><a href="/admin/drop-down/{{ $item->id }}" class="btn btn-primary  @if ($i >=6) disabled @endif">Open</a></td>
+                                <td><a href="/admin/drop-down/{{ $item->m_id }}" class="btn btn-primary  @if ($i >=6) disabled @endif">Open</a></td>
                             </tr>
                         </form>
                         @endfor

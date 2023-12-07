@@ -79,6 +79,8 @@ Route::get('/dropdown-content', function () {
 
 Route::get("/admin/contact","App\Http\Controllers\ContactController@index")->middleware('auth');
 Route::post("/admin/contact/add", "App\Http\Controllers\ContactController@store")->name('contact.store');
+Route::get("/admin/contact/content","App\Http\Controllers\ContactController@content")->middleware('auth');
+Route::put("/admin/contact/content/update","App\Http\Controllers\ContactController@content_update")->middleware('auth');
 Route::get("/admin/contact/{id}/delete","App\Http\Controllers\ContactController@destroy")->middleware('auth');
 Route::post("/admin/location","App\Http\Controllers\ContactController@location");
 
@@ -170,6 +172,8 @@ Route::post("/admin/contents/project-add","App\Http\Controllers\ContentsControll
 Route::get("/admin/contents/blog","App\Http\Controllers\ContentsController@blog_view")->middleware('auth');
 Route::post("/admin/contents/blog-add","App\Http\Controllers\ContentsController@blog_update")->middleware('auth');
 
+Route::get('/change-password', [App\Http\Controllers\HomeController::class, 'changePassword'])->name('change-password');
+Route::post('/change-password', [App\Http\Controllers\HomeController::class, 'updatePassword'])->name('update-password');
 
 
 

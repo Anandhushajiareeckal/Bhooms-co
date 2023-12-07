@@ -131,6 +131,10 @@
                                                 {{ __('SIGN IN') }}
                                             </button>
                                         </li>
+
+                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            {{ __('Forgot Your Password?') }}
+                                        </a>
                                        
                                     </ul><!--[ ul.row end ]-->
                                 </form>

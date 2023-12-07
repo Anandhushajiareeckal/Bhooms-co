@@ -181,7 +181,9 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+									<a class="dropdown-item" href="{{ route('change-password') }}">
+									Change password
+								    </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -257,10 +259,14 @@
 								</a>
 							</li>
 							<li>
-								<a href="/admin/contact" >
+								<a href="#UsersMenu1" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle" aria-label="Users">
 									
 									<span class="mx-2">Contact</span>
 								</a>
+								<ul class="collapse list-unstyled" id="UsersMenu1">
+									<li><a href="/admin/contact" aria-label="My Profile">Enquiry </a></li>
+									<li><a href="/admin/contact/content" aria-label="Account Setting">Contact</a></li>
+								</ul>
 							</li>
 							<li>
 								<a href="/admin/dropdown" >

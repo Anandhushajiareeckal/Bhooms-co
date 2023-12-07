@@ -4109,10 +4109,11 @@ height: 5em;
 	.appointment-form {
 	
 		width:90%; /* Full width on smaller screens */
-		top: 25em;
+		top: 5em;
 		left: 2em;
 		right: 1em;
 		border-radius: 1em; /* Remove border-radius to take full width */
+		padding-bottom: 20px;
 	}  
 	.headingbanner{
 		z-index: 999;
@@ -4285,6 +4286,7 @@ padding-left: 10%;
     padding: 10px;
     cursor: pointer;
 }
+
 .image-container {
     position: relative;
 }
@@ -4296,9 +4298,9 @@ padding-left: 10%;
 
 .image-text {
     position: absolute;
-    bottom: 30%;
-    left:15%;
+    bottom: 65%;
+    left:20%;
     color: white;
-    padding: 10px;
+   
 	font-size: 2vw;
 }

@@ -132,6 +132,7 @@
   border-left-color: transparent;
   border-right-color: #1c89b5;
 }
+
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
   /*#cssmenu {
     width: 100%;
@@ -162,6 +163,7 @@
     width: 100%;
     border-top: 1px solid rgba(120, 120, 120, 0.2);
   }*/
+                                                             
   #cssmenu > ul > li > a,
   #cssmenu ul ul li a,
   #cssmenu ul ul li:first-child > a,
@@ -192,12 +194,28 @@
   #cssmenu #menu-button {
    display: none;
   }
-  #cssmenu .submenu-button {
+  #cssmenu .sub-menu {
     display: none;
   }
+   
   #cssmenu ul ul .submenu-button {
     height: 41px;
   }
+  
+  #cssmenu ul .submenu-button.submenu-opened:after,
+  #cssmenu #menu-button.menu-opened:after {
+    background-position: 0 -28px;
+  }
+  #cssmenu ul ul .submenu-button:after {
+    top: 6.5px;
+  }
+  
+  #cssmenu ul ul .submenu-button:before {
+    top: 19.5px;
+  }
+
+}
+@media (max-width: 766px) {
   #cssmenu ul .submenu-button:after,
   #cssmenu #menu-button:after {
     content: '';
@@ -208,13 +226,13 @@
     width: 28px;
     height: 28px;
     border-radius: 15px;
-    background: #3db2e1;
-    background: -webkit-linear-gradient(top, #58bde5 0%, #4ab7e3 25%, #2babde 50%, #58bde5 75%, #4ab7e3 100%);
-    background: -ms-linear-gradient(top, #58bde5 0%, #4ab7e3 25%, #2babde 50%, #58bde5 75%, #4ab7e3 100%);
+    /* background: #3db2e1; */
+    /* background: -webkit-linear-gradient(top, #58bde5 0%, #4ab7e3 25%, #2babde 50%, #58bde5 75%, #4ab7e3 100%); */
+    /* background: -ms-linear-gradient(top, #58bde5 0%, #4ab7e3 25%, #2babde 50%, #58bde5 75%, #4ab7e3 100%);
     background: -moz-linear-gradient(top, #58bde5 0%, #4ab7e3 25%, #2babde 50%, #58bde5 75%, #4ab7e3 100%);
     background: -o-linear-gradient(top, #58bde5 0%, #4ab7e3 25%, #2babde 50%, #58bde5 75%, #4ab7e3 100%);
-    background: linear-gradient(to bottom, #58bde5 0%, #4ab7e3 25%, #2babde 50%, #58bde5 75%, #4ab7e3 100%);
-    box-shadow: inset 0 -1px 1px #209ed0, inset 0 2px 1px #7fcceb;
+    background: linear-gradient(to bottom, #58bde5 0%, #4ab7e3 25%, #2babde 50%, #58bde5 75%, #4ab7e3 100%); */
+    /* box-shadow: inset 0 -1px 1px #209ed0, inset 0 2px 1px #7fcceb; */
     background-size: 56px 56px;
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -223,13 +241,6 @@
     -ms-transition: all 0.1s ease-out;
     -o-transition: all 0.1s ease-out;
     transition: all 0.1s ease-out;
-  }
-  #cssmenu ul .submenu-button.submenu-opened:after,
-  #cssmenu #menu-button.menu-opened:after {
-    background-position: 0 -28px;
-  }
-  #cssmenu ul ul .submenu-button:after {
-    top: 6.5px;
   }
   #cssmenu #menu-button:before,
   #cssmenu .submenu-button:before {
@@ -244,11 +255,8 @@
     border-top-color: #ffffff;
     z-index: 99;
   }
-  #cssmenu ul ul .submenu-button:before {
-    top: 19.5px;
-  }
   #cssmenu #menu-button.menu-opened:before,
   #cssmenu .submenu-button.submenu-opened:before {
-    border-top-color: #19799f;
+    /* border-top-color: #19799f; */
   }
 }

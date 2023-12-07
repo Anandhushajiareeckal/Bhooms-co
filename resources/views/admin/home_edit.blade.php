@@ -17,6 +17,7 @@
                                 <label class="" for="TextInput">Banner Heading</label>
                             </span>
                         </div>
+                       
                         <div class="mb-4">
                             <span class="form-floating">
                                 Image size: 490X1920
